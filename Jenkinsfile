@@ -8,28 +8,7 @@ pipeline {
     // sudo usermod -a -G docker jenkins
     // restart jenkins server ->  sudo service jenkins restart
     stages {
-        
-        stage('Maven Compile') {
-            steps {
-                echo '----------------- This is a compile phase ----------'
-                sh 'mvn clean compile'
-            }
-        }
-        
-         stage('Maven Test') {
-            steps {
-                echo '----------------- This is a compile phase ----------'
-                sh 'mvn clean test'
-            }
-        }
-        
-        stage('Maven Build') {
-             steps {
-                echo '----------------- This is a build phase ----------'
-                sh 'mvn clean package -DskipTests'
-            }
-        }
-
+         
         stage('Docker Build') {
             steps {
                 echo '----------------- This is a build docker image phase ----------'
