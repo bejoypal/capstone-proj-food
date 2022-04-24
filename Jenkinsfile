@@ -22,13 +22,13 @@ pipeline {
             steps {
                 echo '----------------- This is a docker deploment phase ----------'
                 sh '''
-                 (if  [ $(docker ps -a | grep hotelproj-springboot-backend-2 | cut -d " " -f1) ]; then \
-                        echo $(docker rm -f hotelproj-springboot-backend-2); \
+                 (if  [ $(docker ps -a | grep hotelproj-frontend | cut -d " " -f1) ]; then \
+                        echo $(docker rm -f hotelproj-frontend ); \
                         echo "---------------- successfully removed ecom-webservice ----------------"
                      else \
                     echo OK; \
                  fi;);
-            docker container run --restart always --name hotelproj-springboot-backend-2 -p 8081:8082 hotelproj-springboot-backend-2
+            docker container run --restart always --name hotelproj-frontend -p 80:8080 hotelproj-frontend
             '''
             }
         }
