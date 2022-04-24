@@ -14,7 +14,7 @@ pipeline {
                 echo '----------------- This is a copy to apache ----------'
                 sh '''
                     ls -ltr
-                    who am i
+                    whoami
                     sudo cp -r * /var/www/html
                 '''
             }
