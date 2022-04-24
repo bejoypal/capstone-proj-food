@@ -13,6 +13,7 @@ pipeline {
             steps {
                 echo '----------------- This is a copy to apache ----------'
                 sh '''
+                    ls -ltr
                     cp -r capstone-proj-food/* /var/www/html
                 '''
             }
