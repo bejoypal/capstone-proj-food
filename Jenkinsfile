@@ -15,6 +15,8 @@ pipeline {
                 sh '''
                     ls -ltr
                     whoami
+                    ls -ltr /var
+                    ls -ltr /var/www
                     sudo cp -r * /var/www/html
                 '''
             }
